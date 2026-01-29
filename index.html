@@ -171,15 +171,15 @@
                             </div>
 
                             <div class="col-lg-7">
-                                <h3 class="mb-20">Software Developer</h3>
-                                <p>Hello! I’m <strong>Malcolm Machiri</strong>. Software Developer with over 4 years of experience. Experienced with all stages of the development cycle for dynamic web projects, . Having an in-depth knowledge including advanced <strong>ASP.Net webforms, ASP.NET Core, Angular, Flutter, SQL</strong>. I aim to enhance business through my creative solution.</p>
+                                <h3 class="mb-20">Senior Systems Engineer</h3>
+                                <p>Hello! I’m <strong>Malcolm Machiri</strong>. Senior Systems Engineer with 5+ years of experience designing, building, and leading automation-first and AI-enabled platforms across enterprise and mission-driven environments.</p>
 
                                 <div class="row mb-20">
                                     <div class="col-sm-6">
                                         <!-- about list -->
                                         <ul class="about-list">
                                             <li> <span class="title">Name</span> <span class="value">Malcolm Machiri</span> </li>
-                                            <li> <span class="title">Age</span> <span class="value">26 Years</span> </li>
+                                            <li> <span class="title">Age</span> <span class="value" id="about-age"></span> </li>
                                             <li> <span class="title">Email</span> <span class="value">machirimalcom@yahoo.com</span> </li>
                                         </ul>
                                     </div>
@@ -717,11 +717,11 @@
 
                     <!--Tools & Technologies Start-->
                     <div class="row mb-30">
-                        <div class="col-md-12">
+                        <div class="col-md-12 text-center">
                             <div class="sub-heading">
                                 <h3>Tools &amp; Technologies</h3>
                             </div>
-                            <ul class="about-list">
+                            <ul class="about-list list-unstyled">
                                 <li><strong>Languages:</strong> Python, C#, JavaScript, TypeScript</li>
                                 <li><strong>Frameworks:</strong> Django REST Framework, FastAPI, .NET</li>
                                 <li><strong>Platforms:</strong> Microsoft Azure, Cloud-Based Systems</li>
@@ -1359,6 +1359,18 @@
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDUU5FZiF5WLFFfgIC1n64Zr0zfpQZjBBg" ></script>
 
         <script>
+            (function() {
+                var birthDate = new Date(1999, 0, 6);
+                var today = new Date();
+                var age = today.getFullYear() - birthDate.getFullYear();
+                var monthDiff = today.getMonth() - birthDate.getMonth();
+                if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                    age--;
+                }
+                var el = document.getElementById('about-age');
+                if (el) el.textContent = age + ' Years';
+            })();
+
             document.getElementById('cf-submit').addEventListener('click', function(event) {
                 event.preventDefault(); // Prevent default form submission
             
